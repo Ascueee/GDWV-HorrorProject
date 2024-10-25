@@ -15,12 +15,15 @@ Coding, Explanation of functions 33%
 
 Shehryar Aamir - 100876618 
 
-Idea suggestion for integration of design patterns, visual explanation, explanation of functions33%
+Idea suggestion for integration of design patterns, visual explanation, explanation of functions 33%
 
 
 # Game Information
 
 The game is going to be a short horror game that has a monster constantly trying to find, and chase the player around the area. It contains escape-room-like puzzles and the player must complete the puzzle to finish the game. The game contains no combat within it, so the only thing the player can do if they see the monster, is to run away from it. In addition if the monster reaches the player, then the player will instantly die, since the player will only have access to a single hit point. The player's main goal is to go around the map without the monster seeing them, and completing the necessary puzzles in order to escape. Aspects that further down the line are going to really enhance the experience will be implementing further lighting effects, and textures to make it feel much more like a horror game. 
+
+
+![ProjectManagement](https://github.com/user-attachments/assets/26ccce29-102b-43d5-b74d-c91dfde2b336)
 
 # Singleton
 
@@ -28,14 +31,19 @@ Time Manager
 
 The time manager found in the game is responsible for handling the pause menu, and also responsible for handling the timer that’s found at the top of the game. Starting with how the pause menu was implemented, it’s fairly basic in the way it works, firstly when the player presses escape it calls to the manager, and freeze’s all aspects of the game with Time.Timescale being set to 0, and then when the game resumes it then sets the time.Timescale to 1 for normal movement and time. For the handling of the timer now, it’s mostly the same, just instead of Timescale, DeltaTime is being used instead because while Timescale can track the speed of which the game is running at, DeltaTime can track how long a specific action is running for or meant to be running for, such as a timer that tracks the amount of time passed in the game.
 
+![TimeManager](https://github.com/user-attachments/assets/c8977e0c-aff8-4efc-ab3f-e695f0a11b7d)
+
 UI Manager
 
 The Ui Manager is responsible for displaying the elements that the player would like to see at all times, such as total time in game, and the amount of stamina the player has at the moment. The Manager is set within the canvas for easy access since all the data going in and out would be there. For example, telling the game to pause will make the Ui manager check the Pause menu, and then tell it to be active, letting the player be able to see it and interact with it.
+
+![UiManager](https://github.com/user-attachments/assets/1b942014-5d87-4a5c-aa6b-9cf655b864e0)
 
 Audio Manager
 
 The audio manager's main purpose is to play audio files onto different objects who need them. For example the manager plays audio, and makes that audio come off of the monster, and the player, each of them having different sound effects. The way it works though, is that the audio manager looks for whenever one of the specified objects move, once they move the audio manager would detect it, and play the sound accordingly around the object. 
 
+![SoundManager](https://github.com/user-attachments/assets/14fa74bf-8cf2-48d8-ba9f-9bbbab8b154e)
 
 
 
