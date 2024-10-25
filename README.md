@@ -56,10 +56,13 @@ For customization, we decided to make it so that by pressing some assigned butto
 AI Updates
 
 A second way we decided to implement the Command design pattern in our game was through AI behaviors through an EntityBrain script. This script when attached to a monster houses the many different behavior goals the monster has access to. In addition, the EntityBrain then creates a list of active tasks that the monster can do and then a list of dead behaviors the monster ignores. After, sorting and returning the right goal back to the monster as a variable called currentgoal; the monster then uses the command design pattern by using the current goal variable to call the goal function. This allows for easy goal creation as well as behavioral changes within the monster.
+![MonsterGoals](https://github.com/user-attachments/assets/67f03a2a-25da-4925-a251-1363ffdaa795)
 
 PlayerState/Movement State
 
 Another way the command design pattern is implemented is through what we call player states which control what the player can do when the state is active. The way this is achieved is through the command design pattern which is done by calling a method called StateAction housed in the PlayerState script. This method holds the logic behind  the action for the player, for example, the logic behind walking. This would then be called in the player script like a command. This allows for dynamic state changes as well as expansion of new movement states with the scalability of the code.
+
+![PlayerStateMovementStateDiagram](https://github.com/user-attachments/assets/0dd6a9f2-a749-4852-b231-b2a74a01e29d)
 
 
 # Factory
