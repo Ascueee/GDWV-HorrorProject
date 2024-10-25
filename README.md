@@ -96,17 +96,20 @@ Sound Effects
 One way we decided to implement the observer design pattern in our game was through sound effects. Since our game will put importance on the sound you make, for the current build, we want to implement sounds that vary depending on sprint and can be listened for by the AudioManager. When the player changes movement states, the audio manager is notified and changes the sound that must be played to represent that action. Walking and sprinting would be two different states, and having the audio manager listen for the player's state changes will help differentiate the audio output occurring. This can then be further expanded by having the monster sense audio within a certain proximity, and proximity can vary depending on noise generated from walking or sprinting states.
 
 
+![III](https://github.com/user-attachments/assets/55461a0f-8d72-4e67-a40c-116483b38b0a)
 
 
 UI Updates
 
 A second way we decided to implement the observer design pattern in our game was through updating the UI based on changes taking place in the game. For this build specifically, we plan to implement the design pattern by having UI elements be updated through deltaTime. When the player sprints, the listeners are notified of the stamina consumption taking place, reduce the stamina from the stamina bar, and visually update it at every frame to show the consumption. In the same vein, the game's timer will also be ticking through deltaTime.
 
+![uIUPDATES](https://github.com/user-attachments/assets/88768541-655f-4b6b-b58d-03ce33788132)
 
 Stamina Updates
 
 A third way we decided to implement the observer design pattern in our game was through a stamina system in which the player can sprint to consume stamina from the stamina counter and move faster. To regenerate stamina, the player must return to a walking state, and the player can only sprint for a set amount of time before the entire stamina counter is depleted. Using the observer design pattern, we implement it by having the player class contain a method that consumes stamina through sprinting. Through the observer pattern, we can have the game be notified about these changes in stamina that can then be visually represented through a stamina counter, updating it actively through deltaTime. DeltaTime can also be used to set a max duration on the amount of time spent sprinting before stamina is fully depleted and the player must return to walking.
 
+![Stamina](https://github.com/user-attachments/assets/136f1d7e-885a-49d0-8ea7-3875923496b8)
 
 
 
