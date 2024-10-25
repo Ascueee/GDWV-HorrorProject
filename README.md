@@ -52,6 +52,8 @@ The audio manager's main purpose is to play audio files onto different objects w
 Customization
 
 For customization, we decided to make it so that by pressing some assigned buttons (1-5) on the top of the keyboard the player can cycle between different colors that the player will appear as. This was done by taking the player as a GameObject, getting the mesh of the player, and replacing the material with a list of 4 different preassigned materials.
+
+
 ![CustomizationDiagram](https://github.com/user-attachments/assets/ce49ba59-426c-4c10-a6d1-a10f342dde68)
 
 AI Updates
