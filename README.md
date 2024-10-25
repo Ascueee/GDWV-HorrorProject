@@ -74,17 +74,20 @@ Another way the command design pattern is implemented is through what we call pl
 AI goals
 
 The goals are objects that the monster will use to perform different tasks. The monster would use goalTrigger and PerformGoal, the monster would use a base goal template to perform any kind of behavior that we may want, for example we can add a behavior of making the Monster swim, or even dance. The weight system also determines the priority of the task, so the higher the weight the bigger the priority, and lower the weight the lower the priority. The Patrol goal would have a weight of 2, and idle a weight of 1, so the Monster would prioritize patrolling over being idle.
+![AI Goals](https://github.com/user-attachments/assets/00f4760a-5c95-4057-8138-89d12208d961)
 
 
 
 Monster
 
 A second way we decided to implement the factory design pattern in our game is through our monsters actions. Within the monster class, we have the idle method and the patrol method, both of which perform different actions based on the situation the AI is faced with. To make our AI a bit more robust, we needed to have various methods tied to different actions so the monster isn’t always moving or isn’t always standing still. This can be further expanded down the line when we implement chase and investigate methods that can behave differently and create a more diverse set of actions for our monsters. The more the monster is capable of, the scarier they can be, so the more useful and functional methods we come up with through the factory design pattern, the better our monster AI can be.
+![Monster](https://github.com/user-attachments/assets/ae861700-a562-4394-ba89-8c9f3bad584d)
 
 
 Movement
 
 A third way we decided to implement the factory design pattern in our game was through the movement of the player. Through the player movement class, we can add various methods that cause the player to perform certain actions based on what input is given. These actions range from basic movement via WASD, to a sprint feature using shift. These methods will be contained within the player movement class to reduce unnecessary pollution for classes, and can be easily modified and built upon at a later point in time.
+![Movement](https://github.com/user-attachments/assets/14a7dbed-54c0-4058-91a2-020b26f7e8d1)
 
 
 
