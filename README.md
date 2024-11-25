@@ -22,12 +22,17 @@ The monster AI fully tracks the player now, and allows for it to know where the 
 
 
 Added a patrol function to the monster, allowing it to roam around a set path created by us, this keeps the monster in an area that we would like, however it isn’t fully constricted to this, as it can decided to move to a different path if it wants to, or when it gets to a split. The Patrol also allows for animations to be set onto the monster, making it so that when its state changes, the patrol script will notice it, and change its behaviour accordingly.
+![Patrolling](https://github.com/user-attachments/assets/0027b982-8e08-40ed-9180-89d72521b058)
 
 ## Optimization Design Patterns
 
 Object Pool And FlyWeight Design Pattern(Items):
 
 There were two design patterns which were used related to items, one for the creation of the items which relates to the flyweight design pattern and the second being object pooling. The first optimization pattern used for the items is the flyweight pattern, this pattern allows for objects to share states instead of each object independently keeping the data which in turn saves space in RAM. The other design pattern used is object pooling which pre instantiates objects to reduce the amount of objects being created which also saves memory. The pool then allows for easy access to the pool as well as allowing objects to be returned. This was used in our project when spawning in items allowing for items to be created sharing states and then being put into an item pool which is then referenced by an item spawner that spawns the items into the game.
+![Item](https://github.com/user-attachments/assets/6c8a5d11-000c-488a-ae46-bec2e25817ad)
+![ItemFac](https://github.com/user-attachments/assets/827e555c-acfb-4956-9c6d-81391192f78f)
+![puzzlePool](https://github.com/user-attachments/assets/e8abf3ff-26b9-4fac-9355-484ffa16271b)
+![itemSpawner](https://github.com/user-attachments/assets/3bde440e-f49e-4b00-a7ed-b01e7b746175)
 
 ![SSSSSSSSS](https://github.com/user-attachments/assets/3b598bb1-2bee-48d3-965b-2651a6b66d80)
 
@@ -35,6 +40,8 @@ Second Object pool:
 
 For this optimization design implementation, we decided to use this on the lights around the hallways of the level, this takes a bit of stress off of the system, and allows the lanterns to be spawned in a little bit easier. This is done with two scripts, one being a spawning script that is responsible for spawning in the object onto an empty. This is done using an array to keep a list of the empty objects that are in play. Then using the pooling script it allows for the system to more efficiently keep track of the array, and is the actual action of putting the lantern prefab onto the empty. 
 
+![lanternPool](https://github.com/user-attachments/assets/6176ba60-c3dc-4791-beb5-3ee11d127f05)
+![lanternSpawner](https://github.com/user-attachments/assets/87710ec4-ae8a-4a09-9094-80fb43e1a966)
 
 ![sasasaas](https://github.com/user-attachments/assets/fce89ecb-b525-4b28-b97d-85a497c21fff)
 
@@ -53,7 +60,7 @@ The next tool we implemented is a custom package of scripts we called “HoneyIK
 ## Profiler 
 
 The profiler is an analysis tool in Unity which allows developers to monitor the performance of different components of the engine. In our case the performance results were not varied and were fairly consistent, with one major drawback being that the CPU was being heavily used during garbage collection which did negatively impact the performance. We suspect that the reason garbage collection is hindering performance and not the scripts is because of the implementation of the optimization design patterns being the Flyweight pattern for items as well as Object Pooling. These design patterns are exclusively used in projects to optimize performance which can be seen in the profiler as the script usage is minimal compared to other components which are causing issues.
-
+![profiler](https://github.com/user-attachments/assets/0d2be238-aae9-4aa8-8f0b-0ee030799fdb)
 ![Profiler](https://github.com/user-attachments/assets/bfd52ca6-1f40-495c-823d-40601caa770e)
 
 ## Sources
