@@ -1,4 +1,72 @@
 # GDWV-HorrorProject
+## Final Project Engine
+
+## Video 
+https://www.youtube.com/watch?v=FdBwg-EDVls
+
+## Team Members and roles 
+
+Dylan Dos Ramos - 100873698
+Optimization design pattern, Improvements, descriptions 33%
+
+Hayyan Khan - 100858456
+Plugin, Optimization design pattern, improvements, Explanation of functions 33%
+
+Shehryar Aamir - 100876618
+Explanation of functions, Flowcharts, UML Diagrams 33%
+
+
+## Game Design Patterns improvements 
+
+The monster AI fully tracks the player now, and allows for it to know where the player is. It runs a set path and if the player comes into the line of sight with the monster, the monster will now go towards the player.
+
+
+Added a patrol function to the monster, allowing it to roam around a set path created by us, this keeps the monster in an area that we would like, however it isn’t fully constricted to this, as it can decided to move to a different path if it wants to, or when it gets to a split. The Patrol also allows for animations to be set onto the monster, making it so that when its state changes, the patrol script will notice it, and change its behaviour accordingly.
+
+## Optimization Design Patterns
+
+Object Pool And FlyWeight Design Pattern(Items):
+
+	There were two design patterns which were used related to items, one for the creation of the items which relates to the flyweight design pattern and the second being object pooling. The first optimization pattern used for the items is the flyweight pattern, this pattern allows for objects to share states instead of each object independently keeping the data which in turn saves space in RAM. The other design pattern used is object pooling which pre instantiates objects to reduce the amount of objects being created which also saves memory. The pool then allows for easy access to the pool as well as allowing objects to be returned. This was used in our project when spawning in items allowing for items to be created sharing states and then being put into an item pool which is then referenced by an item spawner that spawns the items into the game.
+
+![SSSSSSSSS](https://github.com/user-attachments/assets/3b598bb1-2bee-48d3-965b-2651a6b66d80)
+
+Second Object pool:
+
+For this optimization design implementation, we decided to use this on the lights around the hallways of the level, this takes a bit of stress off of the system, and allows the lanterns to be spawned in a little bit easier. This is done with two scripts, one being a spawning script that is responsible for spawning in the object onto an empty. This is done using an array to keep a list of the empty objects that are in play. Then using the pooling script it allows for the system to more efficiently keep track of the array, and is the actual action of putting the lantern prefab onto the empty. 
+
+
+![sasasaas](https://github.com/user-attachments/assets/fce89ecb-b525-4b28-b97d-85a497c21fff)
+
+
+## Plugin
+
+Plugin 1:
+
+The plugin we implemented is a spawner script which takes in an object and a spawn location; depending on player input spawns in a cube at a given location. The plugin itself is a DLL file that allows for easy import to unity projects which makes it a nice tool to have when making a game that requires multiple objects spawning. In our case this plugin is used to spawn in a primitive, however this can be expanded to spawn in the player at a specific location or even multiple different monsters if necessary. 
+
+Plugin 2: 
+
+The next tool we implemented is a custom package of scripts we called “HoneyIK” which is used for easy implementation of FABRIC in our game. Using three scripts that make up the FABRIC class, Joint Class, and ChainClass which work together to deform chain joints for dynamic movement of joints. This allows for procedural animation to be used when the joints follow a moving target which in our project can be used to create lifelike environments for the player.
+
+
+## Profiler 
+
+The profiler is an analysis tool in Unity which allows developers to monitor the performance of different components of the engine. In our case the performance results were not varied and were fairly consistent, with one major drawback being that the CPU was being heavily used during garbage collection which did negatively impact the performance. We suspect that the reason garbage collection is hindering performance and not the scripts is because of the implementation of the optimization design patterns being the Flyweight pattern for items as well as Object Pooling. These design patterns are exclusively used in projects to optimize performance which can be seen in the profiler as the script usage is minimal compared to other components which are causing issues.
+
+![Profiler](https://github.com/user-attachments/assets/bfd52ca6-1f40-495c-823d-40601caa770e)
+
+## Sources
+
+ÖZDENFollow, C. B. (2017, February 16). Maw J Laygo - 3D model by Can Berk özden (@canberkozden). Sketchfab. https://sketchfab.com/3d-models/maw-j-laygo-eab313eee35f4e498cad7ffd100bec4a
+
+Again we decided to use a premade model in order to have an easier time showing off some of the animations for the monster, this also made it possible to more accurately see how the scene is meant to look. 
+
+Refactoring and Design Patterns. https://refactoring.guru/. Accessed 25 Nov. 2024.
+Used for research when designing, implementing the different design patterns.
+
+
+## Assignment 1 Engine
 Video Link
 
 https://www.youtube.com/watch?v=v-D0HC1q0Ac
